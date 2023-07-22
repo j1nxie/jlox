@@ -216,7 +216,7 @@ class Scanner {
     }
 
     private char peek() {
-        if (!isAtEnd()) {
+        if (isAtEnd()) {
             return '\0';
         }
         return source.charAt(current);
