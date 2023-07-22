@@ -116,6 +116,15 @@ class Scanner {
         }
     }
 
+    private void string() {
+        while (peek() != '"' && !isAtEnd()) {
+            if (peek() == '\n') {
+                line++;
+            }
+
+            advance();
+        }
+
     private boolean isAtEnd() {
         return current >= source.length();
     }
@@ -153,23 +162,5 @@ class Scanner {
         return source.charAt(current);
     }
 
-    private void string() {
-        while (peek() != '"' && !isAtEnd()) {
-            if (peek() == '\n') {
-                line++;
-            }
-
-            advance();
-        }
-
-        if (isAtEnd()) {
-            Lox.error(line, "unterminated string.");
-            return;
-        }
-
-        advance();
-
-        String value = source.substring(start + 1, current - 1);
-        addToken(STRING, value);
     }
 }
