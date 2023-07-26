@@ -1,3 +1,5 @@
+// TODO: support adding anything and a string, e.g. "scone" + 4 = "scone4".
+// TODO: handle division by zero.
 package moe.rylie.jlox;
 
 public class Interpreter implements Expr.Visitor<Object> {
