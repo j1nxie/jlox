@@ -1,7 +1,5 @@
 package moe.rylie.jlox;
 
-import java.util.List;
-
 abstract class Expr {
     interface Visitor<R> {
         R visitBinaryExpr(Binary expr);
