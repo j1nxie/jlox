@@ -1,4 +1,3 @@
-// TODO: implement C-style block comments
 package moe.rylie.jlox;
 
 import java.util.ArrayList;
