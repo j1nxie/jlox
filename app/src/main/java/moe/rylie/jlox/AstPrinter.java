@@ -59,6 +59,11 @@ class AstPrinter implements Expr.Visitor<String>, Stmt.Visitor<String> {
         return parenthesize("block");
     }
 
+    @Override
+    public String visitIfStmt(Stmt.If stmt) {
+        return parenthesize("if", stmt.condition);
+    }
+
     private String parenthesize(String name, Expr... exprs) {
         StringBuilder builder = new StringBuilder();
 
