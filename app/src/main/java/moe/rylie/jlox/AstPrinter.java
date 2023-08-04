@@ -69,6 +69,11 @@ class AstPrinter implements Expr.Visitor<String>, Stmt.Visitor<String> {
         return parenthesize(expr.operator.toString(), expr.left, expr.right);
     }
 
+    @Override
+    public String visitWhileStmt(Stmt.While stmt) {
+        return parenthesize("loop", stmt.condition);
+    }
+
     private String parenthesize(String name, Expr... exprs) {
         StringBuilder builder = new StringBuilder();
 

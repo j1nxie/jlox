@@ -10,6 +10,7 @@ my implementation of Lox in Java, going along with the book [Crafting Interprete
 - [ ] implement C-style ternary operator.
 - [ ] implement C comma operator.
 - [ ] add error productions to handle binary operators appearing without a left-hand operand.
+- [ ] `break` keyword.
 
 ## license
 
