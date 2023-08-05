@@ -80,6 +80,11 @@ class AstPrinter implements Expr.Visitor<String>, Stmt.Visitor<String> {
         return parenthesize("function call", expr.callee);
     }
 
+    @Override
+    public String visitFunctionStmt(Stmt.Function stmt) {
+        return parenthesize("function: " + stmt.name.toString());
+    }
+
     private String parenthesize(String name, Expr... exprs) {
         StringBuilder builder = new StringBuilder();
 
