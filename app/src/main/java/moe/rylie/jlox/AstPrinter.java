@@ -74,6 +74,12 @@ class AstPrinter implements Expr.Visitor<String>, Stmt.Visitor<String> {
         return parenthesize("loop", stmt.condition);
     }
 
+    @Override
+    public String visitCallExpr(Expr.Call expr) {
+        // TODO: how do you dynamically export all the arguments?
+        return parenthesize("function call", expr.callee);
+    }
+
     private String parenthesize(String name, Expr... exprs) {
         StringBuilder builder = new StringBuilder();
 
